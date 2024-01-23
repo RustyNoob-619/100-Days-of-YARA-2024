@@ -1,7 +1,7 @@
 rule SoCatStrings
 {
     meta:
-        description = "Detects SoCat tool A modified version of SoCat tool used by Sea Turtle to setup a command-and-control channel. "
+        description = "Detects A modified version of SoCat tool used by Sea Turtle to setup a command-and-control channel. "
         author = "RustyNoob619"
         source = "https://www.huntandhackett.com/blog/turkish-espionage-campaigns"
         hash = "f1a4abd70f8e56711863f9e7ed0a4a865267ec7"
