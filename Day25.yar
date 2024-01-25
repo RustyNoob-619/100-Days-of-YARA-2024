@@ -5,7 +5,7 @@ rule Dll_Backdoor_FalseFront_Jan2024 {
         Description = "Identifies a backdoor known as FalseFront which was used by Peach Sandstorm"
         Author = "RustyNoob619"
         Reference = "https://twitter.com/Now_on_VT/status/1744989481831174173, https://twitter.com/MsftSecIntel/status/1737895717870440609"
-        Credits = "Is Now on VT! for notificaiton of the VT sample on Twitter"
+        Credits = "Is Now on VT! for notificaiton of the VT sample on Twitter and for and to Microsoft Threat Intelligence for sharing the intel"
         Hash = "364275326bbfc4a3b89233dabdaf3230a3d149ab774678342a40644ad9f8d614"
     condition:
     pe.pdb_path == "D:\\a\\_work\\1\\s\\artifacts\\obj\\coreclr\\windows.x64.Release\\Corehost.Static\\singlefilehost.pdb" //not a rare PDB path
