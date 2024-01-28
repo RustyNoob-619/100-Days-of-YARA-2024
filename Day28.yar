@@ -1,5 +1,4 @@
 import "pe"
-import "hash"
 rule EXE_Stealer_RisePro_Jan2024 {
     meta:
         Description = "Detects Rise Pro Stealer samples based on properties in the resources, manifest settings and PE Rich Header"
