@@ -4,7 +4,7 @@ rule Ransomware_Nevada_Feb2024 {
     meta:
         Description = "Detects Nevada ransomware aka Nokoyawa ransomware 2.1"
         Author = "RustyNoob619"
-        Reference = "http://google.com"
+        Reference = "https://www.zscaler.com/blogs/security-research/nevada-ransomware-yet-another-nokoyawa-variant"
         Hash = "855f411bd0667b650c4f2fd3c9fbb4fa9209cf40b0d655fa9304dcdd956e0808"
     strings:
         $rust1 = "RustBacktraceMutex"
