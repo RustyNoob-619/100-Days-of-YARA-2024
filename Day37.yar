@@ -27,5 +27,5 @@ rule Ransomware_Nevada_Feb2024 {
     condition:
         2 of ($rust*)
         and 2 of ($ransom*)
-        and (1 of ($s*) or 1 of ($nevada))
+        and (1 of ($s*) or 1 of ($nevada*))
  }
