@@ -25,7 +25,8 @@ rule Ransomware_Nevada_Feb2024 {
         $s2 = "C:\\Users\\user\\Desktop\\new\\nevada_locker\\target\\release\\deps\\nevada.pdb"
         
     condition:
-        2 of ($rust*)
+        uint16be(0) == 0x4D5A
+        and 2 of ($rust*)
         and 2 of ($ransom*)
         and (1 of ($s*) or 1 of ($nevada*))
  }
