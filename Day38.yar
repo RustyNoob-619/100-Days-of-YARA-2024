@@ -4,7 +4,7 @@ rule EXE_Loader_WikiLoader_Feb2024 {
     meta:
         Description = "Detects Wiki Loader samples based on PE import & export properties"
         Author = "RustyNoob619"
-        Credits = "Thanks to pr0xylife, Petrovic and Mangusta for uploading the samples"
+        Credits = "Thanks to pr0xylife and Mangusta for uploading the samples"
         Reference = "https://bazaar.abuse.ch/browse/signature/WikiLoader/"
         Hash = "0de42118dd0cd861bea13de097457ccb407aae901b14e0bec59b0abe660cdf1f"
     
