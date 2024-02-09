@@ -1,35 +1,15 @@
 import "pe"
 
-rule EXE_Stealer_TrollStealer_Feb2024 {
+rule DLL_Stealer_Ov3rStealer_Feb2024 {
     meta:
-        Description = "Detects Troll Stealer malware used by Kimsuky based on the PE import and export properties"
+        Description = "Detects Ov3r Stealer spread through FaceBook Ads"
         Author = "RustyNoob619"
-        Reference = "https://medium.com/s2wblog/kimsuky-disguised-as-a-korean-company-signed-with-a-valid-certificate-to-distribute-troll-stealer-cfa5d54314e2"
-        Hash = "61b8fbea8c0dfa337eb7ff978124ddf496d0c5f29bcb5672f3bd3d6bf832ac92"
-
+        Reference = "https://www.trustwave.com/hubfs/Web/Library/Documents_pdf/FaceBook_Ad_Spreads_Novel_Malware.pdf"
+        Hash = "c6765d92e540af845b3cbc4caa4f9e9d00d5003a36c9cb548ea79bb14c7e8f66"
     condition:
-        for 3 library in pe.import_details:
-        (library.library_name == "KERNEL32.dll")
-        and for 2 library in pe.import_details:
-        (library.library_name == "USER32.dll")
-        and pe.dll_name == "golang.dll"
-        and pe.export_details[0].name == "_cgo_dummy_export" 
-        and for 9 export in pe.export_details:
-        (export.name endswith "Trampoline")
+        pe.dll_name == "Dropper.dll"
+        and pe.number_of_exports > 125
+        and for 100 export in pe.export_details:
+        (export.name startswith "Wer")
        
  }
-
- rule Signed_Certificate_D2_Innovation_Feb2024 {
-    meta:
-        Description = "This is a legitimate Code Signing Certificate Stolen and used by Kimsuky"
-        Author = "RustyNoob619"
-        Reference = "https://medium.com/s2wblog/kimsuky-disguised-as-a-korean-company-signed-with-a-valid-certificate-to-distribute-troll-stealer-cfa5d54314e2"
-        Hash = "61b8fbea8c0dfa337eb7ff978124ddf496d0c5f29bcb5672f3bd3d6bf832ac92"
-
-    condition:
-        //EXE_Stealer_TrollStealer_Feb2024 and
-        pe.signatures[0].subject contains "D2innovation"
-        and pe.signatures[0].serial == "00:88:90:ca:b1:cd:51:0c:d2:0d:ab:4c:e5:94:8c:bc:3a"
-          
- }
-
