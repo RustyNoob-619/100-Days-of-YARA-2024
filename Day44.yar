@@ -3,7 +3,7 @@ import "vt"
 rule New_C2_HookBot_Login_Panels
 {
   meta:
-    author = "RustyNoob"
+    author = "RustyNoob619"
     description = "Detects new URLs hosting the HookBot Andorid Malware C2 Login Panels"
     target_entity = "url"
   condition:
