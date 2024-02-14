@@ -9,21 +9,19 @@ ini = config['Default']
 rule_name = ini["rule-name"]
 api_key = ini["API-KEY"]
 git_url = ini["github-URL"] + rule_name
+
 vt_email = ini["vt-email-address"]
-
-
-def github_grab_yara_rule(raw_github_url):
-    git_response = requests.get(url= raw_github_url)
-    RuleSet = git_response.text
-    return RuleSet
-
 vt_url = "https://www.virustotal.com/api/v3/intelligence/retrohunt_jobs"
-
 vt_headers = {
     "accept": "application/json",
     "content-type": "application/json",
     "x-apikey" : api_key 
 }
+
+def github_grab_yara_rule(raw_github_url):
+    git_response = requests.get(url= raw_github_url)
+    RuleSet = git_response.text
+    return RuleSet
 
 def vt_test_yara_rule(vt_api_url, vt_api_headers, vt_notify_email ):
     yara_rule = github_grab_yara_rule(git_url)
