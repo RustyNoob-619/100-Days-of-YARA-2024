@@ -5,6 +5,7 @@ rule RAT_Remcos_File_behaviour
     description = "Detecting Remcos malware samples based on File Behaviour Properties such as JA3 Digests"
     sample_size = "Matches on 1200 files in VT, currently no False Positives Identified"
     file_types = "Matches on multiple file types with all atributed to Remcos on Virus Total"
+    file_hash = "a12adcef2a153e0926843befaad18c7378d8d1b698400c51a69b229f99979d54"
     target_entity = "file"
   
   condition:
