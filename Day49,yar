@@ -1,0 +1,14 @@
+rule RAT_Remcos_File_behaviour
+{
+  meta:
+    author = "RustyNoob619"
+    description = "Detecting Remcos malware samples based on File Behaviour Properties such as JA3 Digests"
+    sample_size = "Matches on 1200 files in VT, currently no False Positives Identified"
+    file_types = "Matches on multiple file types with all atributed to Remcos on Virus Total"
+    target_entity = "file"
+  
+  condition:
+    vt.metadata.new_file
+    and vt.behaviour.ja3_digests[0] == "a85be79f7b569f1df5e6087b69deb493" //Remocos JA3
+    //worth adding more file behaviour attributes such as file types to match on specifics
+}
