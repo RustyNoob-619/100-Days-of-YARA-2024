@@ -20,7 +20,7 @@ rule ELF_Backdoor_ZipLine_Feb2024 {
     $cmd2 = "./installer/scripts"
     $cmd3 = "/retval=$(exec $installer $@)/d' /pkg/do-install"
 
-    $ssh = "SSH-2.0-OpenSSH_0.3xx"
+    $sig = "SSH-2.0-OpenSSH_0.3xx"
 
     condition:
        for 3 sym in elf.dynsym:
@@ -29,7 +29,7 @@ rule ELF_Backdoor_ZipLine_Feb2024 {
        or sym.name == "__cxa_finalize")
        and 3 of ($dir*)
        and any of ($cmd*) 
-       and $ssh
+       and $sig
        
  }
 
