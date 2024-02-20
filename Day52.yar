@@ -20,3 +20,5 @@ rule EXE_Ransomware_Phobos_VT_Feb2024 {
             (file endswith "[backmydata@skiff.com].backmydata"))
        
  }
+
+// A non-VT Yara Rule is available at Day3.yar...
