@@ -10,6 +10,7 @@ rule EXE_Ransomware_Phobos_VT_Feb2024 {
     
     condition:
         vt.metadata.new_file
+        and vt.metadata.file_type == vt.FileType.PE_EXE
         and for any malware_name in vt.metadata.malware_families:
         (malware_name == "phobos")
         or 
