@@ -33,3 +33,5 @@ rule DLL_TinyTurla_Strings_Feb2024 {
         and 5 of ($usragnt*)
        
  }
+
+// Day51.yar has the YARA rule based on the PE imports and exports
