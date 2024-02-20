@@ -7,7 +7,7 @@ rule DLL_TinyTurla_Strings_Feb2024 {
     strings:
         $URLs1 = "https://thefinetreats.com/wp-content/themes/twentyseventeen/rss-old.php"
         $URLs2 = "https://hanagram.jp/wp/wp-content/themes/hanagram/rss-old.php"
-        $URLsUnknown = /https:.{2,100}php/ //hardcoded C2 URLs in the samples
+        $URLsUnknown = /https:.{2,100}php/ //hardcoded PHP URLs in the samples
 
         $cmd1 = "changeshell"
         $cmd2 = "Set-PSReadLineOption -HistorySaveStyle SaveNothing"
