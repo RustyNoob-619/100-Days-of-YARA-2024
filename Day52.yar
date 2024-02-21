@@ -4,6 +4,7 @@ rule EXE_Ransomware_Phobos_VT_Feb2024 {
     meta:
         Description = "Detects Phobos Ransomware based on File Behaviour and Malware Config using VT Live Hunt"
         Author = "RustyNoob619"
+        Credits = "Is Now on VT! for the notification of the malware sample"
         Reference = "https://grahamcluley.com/20-hospitals-in-romania-hit-hard-by-ransomware-attack-on-it-service-provider/"
         Hash = "396a2f2dd09c936e93d250e8467ac7a9c0a923ea7f9a395e63c375b877a399a6"
         Sample_Size = "Matches around 125 Phobos Samples"
