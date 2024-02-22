@@ -1,4 +1,3 @@
-import "dotnet"
 import "pe"
 
 rule DLL_BankingTrojan_Coyote_Feb2024 {
