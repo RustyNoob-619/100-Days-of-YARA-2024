@@ -3,6 +3,7 @@ rule ELF_Implant_COATHANGER_Feb2024 {
     meta:
         Description = "Detects COTHANGER malware that spawns a BusyBox Reverse Shell "
         Author = "RustyNoob619"
+        Credits = "Is Now on VT! for the notification of malware sample"
         Reference = "https://www.ncsc.nl/binaries/ncsc/documenten/publicaties/2024/februari/6/mivd-aivd-advisory-coathanger-tlp-clear/TLP-CLEAR+MIVD+AIVD+Advisory+COATHANGER.pdf"
         Hash = "218a64bc50f4f82d07c459868b321ec0ef5cf315b012255a129e0bde5cc80320"
     strings:
