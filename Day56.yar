@@ -11,23 +11,25 @@ rule EXE_Stealer_RustyStealer_Feb2024 {
         $rust1 = "/rustc/cc66ad468955717ab92600c770da8c1601a4ff33\\library\\alloc\\src\\collections\\btree\\map\\entry.rsh"
         $rust2 = "/rustc/cc66ad468955717ab92600c770da8c1601a4ff33\\library\\core\\src\\slice\\iter.rs"
         $rust3 = "/rustc/cc66ad468955717ab92600c770da8c1601a4ff33\\library\\core\\src\\fmt\\mod.rs"
-        $rust4 = "\\.\\pipe\\__rust_anonymous_pipe1__."
-        $rust5 = "Local\\RustBacktraceMutex00000000"
+        $rust4 = "G:\\RUST_DROPPER_EXE_PAYLOAD\\DROPPER_MAIN\\pe-tools\\src\\shared"
+        $rust5 = "G:\\RUST_DROPPER_EXE_PAYLOAD\\DROPPER_MAIN\\pe-tools\\src\\x64.rs"
+        $rust6 = "\\.\\pipe\\__rust_anonymous_pipe1__."
+        $rust7 = "Local\\RustBacktraceMutex00000000"
         
         $unref = "AppPolicyGetProcessTerminationMethod"
 
         $susurl = "https://reboot.show/boredape/downloadx.cmdsrc\\main.rs"
 
     condition:
-        pe.imphash() == "88a2d6e140afe5bcad7a3b6bdb449e9c"
+        pe.number_of_signatures == 0
+        and pe.imphash() == "88a2d6e140afe5bcad7a3b6bdb449e9c"
         or (
             pe.imports("ntdll.dll","RtlNtStatusToDosError")
             and pe.imports("bcrypt.dll","BCryptGenRandom")
             and pe.imports("secur32.dll","FreeCredentialsHandle")
-            and 3 of ($rust*)
+            and 4 of ($rust*)
             and $unref 
-            or $susurl
+            and $susurl
         )
      
  }
-
