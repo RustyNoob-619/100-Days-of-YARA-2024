@@ -1,61 +1,46 @@
-
-rule ELF_Implant_COATHANGER_Feb2024 {
+import "pe"
+rule EXE_Stealer_Elusive_Feb2024 {
     meta:
-        Description = "Detects COTHANGER malware that spawns a BusyBox Reverse Shell "
+        Description = "Detects Elusive Stealer malware"
         Author = "RustyNoob619"
-        Reference = "https://www.ncsc.nl/binaries/ncsc/documenten/publicaties/2024/februari/6/mivd-aivd-advisory-coathanger-tlp-clear/TLP-CLEAR+MIVD+AIVD+Advisory+COATHANGER.pdf"
-        Hash = "218a64bc50f4f82d07c459868b321ec0ef5cf315b012255a129e0bde5cc80320"
+        Credits = "Yogesh Londhe for sharing the malware sample hash"
+        Reference = "https://twitter.com/suyog41/status/1760168286711677328"
+        Hash = "7bd84d2f0ac282b9351f5243f5ad4c85b7bd6081fcf8887a89d33f0ba7422eeb"
     strings:
-        $etc1 = "/etc/modules/%s"
-        $etc2 = "/etc/shadow"
-        $etc3 = "/etc/passwd"
-        $etc4 = "/etc/shells"
-        $etc5 = "/etc/gshadow"
-        $etc6 = "/etc/hostid"
-        $etc7 = "/etc/issue"
-        $etc8 = "/etc/nologin"
-        $etc9 = "/etc/motd"
-        $etc10 = "/etc/network/if-%s.d"
-        $etc11 = "/etc/ifplugd/ifplugd.action"
-        $etc12 = "/etc/mactab"
+        $geo1 = "country_flag"
+        $geo2 = "country_capital"
+        $geo3 = "country_phone"
+        $geo4 = "continent_code"
+        $geo5 = "timezone_name"
+        $geo6 = "currency_code"
+        
+        $wal1 = "Wallets/Armory Wallet/"
+        $wal2 = "Wallets/Bitcoin Core/"
+        $wal3 = "Wallets/Exodus/"
+        $wal4 = "Wallets/Coinomi/wallets/"
+        $wal5 = "Wallets/Litecoin/"
+        $wal6 = "Wallets/DashCore/"
+        $wal7 = "Bitcoin\\wallets"
+        $wal8 = "Wallets/Electrum/wallets/"
+        $wal9 = "Wallets/Bytecoin/blockchain/"
 
-
-        $conf1 = "/etc/man.config"
-        $conf2 = "/etc/man_db.conf"
-        $conf3 = "/etc/dnsd.conf"
-        $conf4 = "/etc/udhcpd.conf"
-        $conf5 = "/etc/ntp.conf"
-        $conf6 = "/etc/inetd.conf"
-
-        $bsybx1 = "busybox" nocase
-        $bsybx2 = "/etc/busybox.conf"
-        $bsybx3 = "busybox --show SCRIPT"
-        $bsybx4 = "busybox --install [-s] [DIR]"
-
-        $cmd1 = "--setgroups=allow and --map-root-user are mutually exclusive"
-        $cmd2 = "tar -zcf /var/log/bootlog.tgz header %s *.log"
-        $cmd3 = "cat /var/run/udhcpc.%iface%.pid"
-        $cmd4 = "test -f /var/run/udhcpc.%iface%.pid"
-        $cmd5 = "run-parts /etc/network/if-%s.d"
-        $cmd6 = "/var/run/ifplugd.%s.pid"
-        $cmd7 = "start-stop-daemon --stop -x wvdial -p /var/run/wvdial.%iface% -s 2"
-
-        $httprsp1 = "HTTP/1.1 %u %s"
-        $httprsp2 = "Content-type: %s"
-        $httprsp3 = "WWW-Authenticate: Basic realm=\"%.999s\""
-        $httprsp4 = "Location: %s/%s%s"
-        $httprsp5 = "Content-Range: bytes %lu-%lu/%lu"
-        $httprsp6 = "Accept-Ranges: bytes"
-        $httprsp7 = "ETag: %s"
-        $httprsp8 = "Content-Encoding: gzip"
-
+        $fund1 = "Wallets found -"
+        $fund2 = "Apps / Gaming found -"
+        $fund3 = "Utilities found -"
+        $fund4 = "Credit cards found -"
+        $fund5 = "Passwords found -"
+        $fund6 = "Autofills found -"
+        $fund7 = "Downloads found -"
+        $fund8 = "History found -"
 
     condition:
-        6 of ($etc*)
-        and 3 of ($conf*)
-        and any of ($bsybx*)
-        and 4 of ($cmd*)
-        and all of ($httprsp*)
+        pe.pdb_path == "C:\\ooo999\\TG\\x64\\Release\\x64.pdb"
+        or pe.imphash() == "1b0344949f65b67c032e1179ce6311b7"
+        or (
+            3 of ($geo*)
+            and 5 of ($wal*)
+            and 5 of ($fund*)
+        )
      
  }
 
