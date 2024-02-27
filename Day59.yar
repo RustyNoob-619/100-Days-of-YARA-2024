@@ -4,7 +4,7 @@ rule DLL_RAT_Xeno_Feb2024 {
     meta:
         Description = "Detects Xeno RAT malware based on PE properties"
         Author = "RustyNoob619"
-        Reference = "https://bazaar.abuse.ch/sample/58d851d4909cd3833f18aec033c8856dc14c5ba60e037114193b92c18e9670b8/"
+        Reference = "https://www.cyfirma.com/outofband/xeno-rat-a-new-remote-access-trojan-with-advance-capabilities/"
         Hash = "1762536a663879d5fb8a94c1d145331e1d001fb27f787d79691f9f8208fc68f2"
 
     condition:
