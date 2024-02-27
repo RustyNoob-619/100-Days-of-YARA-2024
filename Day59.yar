@@ -1,0 +1,22 @@
+import "pe"
+
+rule DLL_RAT_Xeno_Feb2024 {
+    meta:
+        Description = "Detects Xeno RAT malware based on PE properties"
+        Author = "RustyNoob619"
+        Reference = "https://bazaar.abuse.ch/sample/58d851d4909cd3833f18aec033c8856dc14c5ba60e037114193b92c18e9670b8/"
+        Hash = "1762536a663879d5fb8a94c1d145331e1d001fb27f787d79691f9f8208fc68f2"
+
+    condition:
+        pe.imphash() == "ed4aa283499e90f2a02acb700ea35a45"
+        and pe.pdb_path == "C:\\Users\\IEUser\\Desktop\\samcli-FINAL\\x64\\Release\\samcli.pdb"
+        and pe.number_of_exports == 36
+        and pe.number_of_signatures == 1
+        and for all export in pe.export_details:
+        (export.name startswith "Net" and export.forward_name startswith "C:\\Windows\\System32\\samcli.Net")
+        and for all resource in pe.resources:
+        (resource.language == 2057 or resource.language == 1033)
+        and pe.version_info["LegalCopyright"] == "\xa9 Microsoft Corporation. All rights reserved."
+        and pe.version_info["CompanyName"] == "Microsoft Corporation"
+        
+ }
