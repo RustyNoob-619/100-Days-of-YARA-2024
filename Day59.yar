@@ -1,3 +1,4 @@
+
 import "pe"
 
 rule DLL_RAT_Xeno_Feb2024 {
@@ -9,14 +10,20 @@ rule DLL_RAT_Xeno_Feb2024 {
 
     condition:
         pe.imphash() == "ed4aa283499e90f2a02acb700ea35a45"
-        and pe.pdb_path == "C:\\Users\\IEUser\\Desktop\\samcli-FINAL\\x64\\Release\\samcli.pdb"
+        or pe.pdb_path == "C:\\Users\\IEUser\\Desktop\\samcli-FINAL\\x64\\Release\\samcli.pdb"
         and pe.number_of_exports == 36
         and pe.number_of_signatures == 1
+        and pe.signatures[0].number_of_certificates == 3
         and for all export in pe.export_details:
         (export.name startswith "Net" and export.forward_name startswith "C:\\Windows\\System32\\samcli.Net")
         and for all resource in pe.resources:
-        (resource.language == 2057 or resource.language == 1033)
-        and pe.version_info["LegalCopyright"] == "\xa9 Microsoft Corporation. All rights reserved."
-        and pe.version_info["CompanyName"] == "Microsoft Corporation"
-        
+        (resource.language == 2057 or resource.language == 1033) // English US and UK
+        and pe.version_info["LegalCopyright"] == "\xa9 Microsoft Corporation. All rights reserved." // Impersonating Microsoft
+       
  }
+
+
+
+ 
+
+ 
