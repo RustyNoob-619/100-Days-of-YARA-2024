@@ -2,7 +2,7 @@ import "pe"
 
 rule DLL_Loader_Wineloader_March2024 {
     meta:
-        Description = "Detects Wine loader DLL"
+        Description = "Detects Wineloader malware used by the SpikedWine Threat Actor in campaigns against European Diplomats"
         Author = "RustyNoob619"
         Reference = "https://www.zscaler.com/blogs/security-research/european-diplomats-targeted-spikedwine-wineloader"
         Hash = "72b92683052e0c813890caf7b4f8bfd331a8b2afc324dd545d46138f677178c4"
