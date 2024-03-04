@@ -8,10 +8,9 @@ rule TTP_Hardcoded_IP_Addresses_Feb2024
    strings:
       $ip = /[0-255]{1}\.[0-255]{1}\.[0-255]{1}\.[0-255]{1}/
       $ver = /[0-9]{1}\.[0-9]{1}\.[0-9]{1}\.[0-9]{1}/
-      $fp1 = "8.8.8.8"
-      $fp2 = "127.0.0.1"
+      $fp = "127.0.0.1"
    condition:
        $ip 
-       and not ($fp1 or $fp2 or $ver)
+       and not ($fp or $ver)
 
 }
