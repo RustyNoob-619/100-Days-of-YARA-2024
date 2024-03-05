@@ -1,6 +1,6 @@
 rule DLL_Banking_Trojan_Chavecloak_March2024 {
     meta:
-        Description = "Detects the lightshot DLL which is the Chavecloak Banking Trojan which was used to target banks in Brazil"
+        Description = "Detects the lightshot DLL (Final Payload) which is the Chavecloak Banking Trojan which was used to target banks in Brazil"
         Author = "RustyNoob619"
         Reference = "https://www.fortinet.com/blog/threat-research/banking-trojan-chavecloak-targets-brazil"
         Hash = "131d2aa44782c8100c563cd5febf49fcb4d26952d7e6e2ef22f805664686ffff"
