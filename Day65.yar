@@ -1,3 +1,5 @@
+import "pe"
+
 rule DLL_Banking_Trojan_Chavecloak_March2024 {
     meta:
         Description = "Detects the lightshot DLL (Final Payload) which is the Chavecloak Banking Trojan which was used to target banks in Brazil"
