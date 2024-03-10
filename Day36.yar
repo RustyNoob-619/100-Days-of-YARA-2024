@@ -1,4 +1,4 @@
-rule LNK_Dropper_MalwareName_Feb2024 {
+rule LNK_Dropper_Russian_APT_Feb2024 {
     meta:
         Description = "Detects LNK dropper samples used by a Russian APT during a past campaign"
         Author = "RustyNoob619"
