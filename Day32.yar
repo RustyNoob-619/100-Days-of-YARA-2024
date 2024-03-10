@@ -1,7 +1,7 @@
 import "pe"
 import "math"
 
- rule EXE_Trojan_RomCom_Specific_Feb2024 {
+rule EXE_Trojan_RomCom_Specific_Feb2024 {
     meta:
         Description = "Detects malware used by RomCom Threat Actor based on import hash"
         Author = "RustyNoob619"
