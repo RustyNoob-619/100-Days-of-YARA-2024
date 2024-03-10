@@ -1,9 +1,9 @@
 rule DLL_TinyTurla_Strings_Feb2024 {
     meta:
-        Description = "Detects Ov3r Stealer spread through FaceBook Ads"
-        Author = "RustyNoob619"
-        Reference = "https://www.trustwave.com/hubfs/Web/Library/Documents_pdf/FaceBook_Ad_Spreads_Novel_Malware.pdf"
-        Hash = "c6765d92e540af845b3cbc4caa4f9e9d00d5003a36c9cb548ea79bb14c7e8f66"
+        Description = "Detects Tiny Turla Implant used by Turla APT based on match strings"
+        author = "Yashraj Solanki - Cyber Threat Intelligence Analyst at Bridewell"
+        Reference = "https://blog.talosintelligence.com/tinyturla-next-generation/"
+        Hash = "267071df79927abd1e57f57106924dd8a68e1c4ed74e7b69403cdcdf6e6a453b"
     strings:
         $URLs1 = "https://thefinetreats.com/wp-content/themes/twentyseventeen/rss-old.php"
         $URLs2 = "https://hanagram.jp/wp/wp-content/themes/hanagram/rss-old.php"
