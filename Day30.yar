@@ -1,4 +1,3 @@
-import "console"
 import "pe"
 
 rule EXE_Stealer_Nightingale_Imphash_Jan2024 {
