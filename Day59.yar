@@ -13,7 +13,6 @@ rule DLL_RAT_Xeno_Feb2024 {
         or pe.pdb_path == "C:\\Users\\IEUser\\Desktop\\samcli-FINAL\\x64\\Release\\samcli.pdb"
         and pe.number_of_exports == 36
         and pe.number_of_signatures == 1
-        and pe.signatures[0].number_of_certificates == 3
         and for all export in pe.export_details:
         (export.name startswith "Net" and export.forward_name startswith "C:\\Windows\\System32\\samcli.Net")
         and for all resource in pe.resources:
