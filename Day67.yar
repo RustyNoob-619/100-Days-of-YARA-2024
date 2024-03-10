@@ -15,7 +15,7 @@ rule EXE_Unknown_Backdoor_March2024 {
 
     condition:
         pe.number_of_sections == 3
-        and for section in pe.sections:
+        and for any section in pe.sections:
         (math.entropy(section.raw_data_offset, section.raw_data_size) > 7.84)
         and pe.imports("KERNEL32.DLL","VirtualAlloc")
         and pe.imports("KERNEL32.DLL","VirtualProtect")
