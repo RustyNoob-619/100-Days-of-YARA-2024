@@ -1,4 +1,4 @@
-rule HydraAndroidStrings
+rule XamaliciousAndroidStrings
 {
     meta:
         description = "Detects Xamalicious Android malware samples based on the strings matched"
