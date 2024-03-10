@@ -1,5 +1,5 @@
 import "pe"
- rule Old_Code__Signature_AnyDesk_Feb2024 {
+rule Old_Code__Signature_AnyDesk_Feb2024 {
     meta:
         Description = "Detects files with older and no longer valid code signing certifcates of AnyDesk"
         Author = "RustyNoob619"
@@ -14,7 +14,7 @@ import "pe"
        
  }
 
- rule Sus_AnyDesk_Attempts_Feb2024 {
+rule Sus_AnyDesk_Attempts_Feb2024 {
     meta:
         Description = "Detects files attempting to impersonate AnyDesk Windows Version"
         Author = "RustyNoob619"
