@@ -6,7 +6,7 @@ rule EXE_Stealer_Nightingale_Imphash_Jan2024 {
         Author = "RustyNoob619"
         Credits = "Yogesh Londhe @suyog41 for sharing the File Hash on Twitter"
         Reference = "https://twitter.com/suyog41/status/1751930165230469619"
-        Hash = "c0cc6d724ac017163b40866c820fd67df6ac89924a623490ec1de2ecacf1d0219.exe"
+        Hash = "c0cc6d724ac017163b40866c820fd67df6ac89924a623490ec1de2ecacf1d0219"
     
     condition:
        pe.imphash() == "b92e25fdf67d41fe9a0f94a46fd5528a"
