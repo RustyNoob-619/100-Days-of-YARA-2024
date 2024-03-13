@@ -1,9 +1,9 @@
 
 import "pe"
 
-rule DLL__NorthKorean_Diamond_Sleet_March2024 {
+rule DLL_North_Korean_Lazarus_March2024 {
     meta:
-        Description = "Detects a malicious DLL used by a North Korean Threat actor known as Diamond Sleet"
+        Description = "Detects a malicious DLL used by a North Korean Threat actor Lazarus"
         Author = "RustyNoob619"
         Credits = "@smica83 for sharing the malware sample on Malware Bazaar"
         Reference = "https://twitter.com/BaoshengbinCumt/status/1767422816507646073"
