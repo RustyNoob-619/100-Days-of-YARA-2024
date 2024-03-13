@@ -5,7 +5,7 @@ rule DLL_North_Korean_Lazarus_March2024 {
     meta:
         Description = "Detects a malicious DLL used by a North Korean Threat actor Lazarus"
         Author = "RustyNoob619"
-        Credits = "@smica83 for sharing the malware sample on Malware Bazaar"
+        Credits = "@BaoshengbinCumt for sharing the malware sample on Twitter"
         Reference = "https://twitter.com/BaoshengbinCumt/status/1767422816507646073"
         Hash = "5289529957d52c9d5fc2e47aa9924fd1de21b902509dee0241d5d6b056733a94"
 
