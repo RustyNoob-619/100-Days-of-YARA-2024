@@ -1,6 +1,6 @@
 import "pe"
 
-rule TTP_API_Functions_Defense_Evasion_Feb2024
+rule TTP_API_Functions_Defense_Evasion_March2024
 {
     meta:
         author = "RustyNoob619"
