@@ -7,7 +7,7 @@ rule EXE_RAT_vxRAT_March2024 {
         Author = "RustyNoob619"
         Credits = "@naumovax for sharing the sample here https://twitter.com/naumovax/status/1768612117429567536 "
         Reference = "https://github.com/f3di006/vxRat"
-        Hash = "74f7bb1eb33afb53108923519c35474c91283823b7e1c7ea965c2a7a7cc44db"
+        Hash = "774f7bb1eb33afb53108923519c35474c91283823b7e1c7ea965c2a7a7cc44db"
 
     strings:
         $email = "Global\\f3di006@gmail.com"
