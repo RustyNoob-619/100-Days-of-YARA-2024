@@ -1,6 +1,6 @@
 import "pe"
  
-rule EXE_Backdoor_Rust_Feb2024 {
+rule EXE_Backdoor_Rust_March2024 {
     meta:
         Description = "Detects an interesting Rust based backdoor/infostealer with one matched file linked to the Spica Backdoor used by Callisto"
         Author = "RustyNoob619"
