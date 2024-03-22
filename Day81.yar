@@ -1,3 +1,4 @@
+
 import "pe"
 
 rule EXE_gh0st_Dropper_first_stage_March2024
@@ -9,12 +10,12 @@ rule EXE_gh0st_Dropper_first_stage_March2024
     reference = "https://www.first.org/resources/papers/conference2010/cummings-slides.pdf"
   
   condition:
-    for any resource in pe.resources:
-    (resource.language == 2052                             // Chinese Simplified and resource.
-    and resource.type_string == "B\x00I\x00N\x00")        // Embedded DLL Payload
-    and (pe.pdb_path contains "gh0st"
+    (pe.pdb_path contains "gh0st"
     or pe.imphash() == "e2b4a22dd01bac62ec948d04cee8e739")
     and not pe.pdb_path contains "i386"
+    and for any resource in pe.resources:
+    (resource.language == 2052                             // Chinese Simplified and resource.
+    and resource.type_string == "B\x00I\x00N\x00")        // Embedded DLL Payload 
     
 }
 
