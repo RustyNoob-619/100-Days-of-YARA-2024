@@ -12,7 +12,8 @@ rule EXE_gh0st_Dropper_first_stage_March2024
     for any resource in pe.resources:
     (resource.language == 2052                             // Chinese Simplified and resource.
     and resource.type_string == "B\x00I\x00N\x00")        // Embedded DLL Payload
-    and pe.pdb_path contains "gh0st"
+    and (pe.pdb_path contains "gh0st"
+    or pe.imphash() == "e2b4a22dd01bac62ec948d04cee8e739")
     and not pe.pdb_path contains "i386"
     
 }
