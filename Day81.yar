@@ -24,7 +24,7 @@ rule DLL_gh0st_Dropper_second_stage_March2024
   meta:
     author = "RustyNoob619"
     description = "Detects gh0st RAT which is the second stage paylaod dropped by gh0st Loader"
-    file_hash = "86390c9407c61353595e43aa87475ffe96d9892cfac3324d02b374d11747184ds"
+    file_hash = "86390c9407c61353595e43aa87475ffe96d9892cfac3324d02b374d11747184d"
     reference = "https://www.first.org/resources/papers/conference2010/cummings-slides.pdf"
   
   condition:
