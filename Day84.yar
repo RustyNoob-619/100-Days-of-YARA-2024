@@ -1,5 +1,4 @@
 
-
 import "pe"
 
 rule TTP_Impersonating_Google_Updates_March2024 {
