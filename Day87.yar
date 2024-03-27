@@ -3,6 +3,7 @@ rule EXE_Backdoor_OceanMap_March2024 {
     meta:
         Description = "Detects Ocean Map Backdoor used by Russian Threat Group APT28"
         Author = "RustyNoob619"
+        Reference = "https://medium.com/@knight0x07/analyzing-apt28s-oceanmap-backdoor-exploring-its-c2-server-artifacts-db2c3cb4556b"
         File_Hash = "24fd571600dcc00bf2bb8577c7e4fd67275f7d19d852b909395bebcbb1274e04"
 
     strings: 
