@@ -4,6 +4,7 @@ rule EXE_RAT_XWorm_April2024 {
     meta:
         Description = "Detects XWorm RAT malware based on the matched strings"
         Author = "RustyNoob619"
+        Credits = "@ShanHolo for the discovery of Open Dir serving XWorm RAT and for sharing the malware hash"
         Reference = "https://twitter.com/ShanHolo/status/1776550052871242089"
         File_Hash = "e761f2d9049734373c12c97aa557183081403e792b40028c410e4a6c0646c2b8"
 
