@@ -11,9 +11,9 @@ rule EXE_ICS_Triton_April2024 {
     strings:
         $python = "PYTHONSCRIPT" wide fullword
 
-        $antivm = "QueryPerformanceCounter"
-        $antivm = "GetTickCount"
-        $antivm = "IsDebuggerPresent"
+        $antivm1 = "QueryPerformanceCounter"
+        $antivm2 = "GetTickCount"
+        $antivm3 = "IsDebuggerPresent"
 
         $lib = "library.zip" fullword // Custom communication library for interaction with Triconex controller
         $payload = "payload"
